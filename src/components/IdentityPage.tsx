@@ -1,4 +1,4 @@
-import React from 'react';
+
 
 const IdentityPage = () => {
   const downloadPng = (svgUrl: string, filename: string) => {

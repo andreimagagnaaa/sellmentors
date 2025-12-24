@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import { Button } from './ui/button';
 import { Menu, X } from 'lucide-react';
 import { Logo } from './Logo';
@@ -9,7 +9,6 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { openBookingModal } = useBooking();
-  const { scrollY } = useScroll();
   
   useEffect(() => {
     const handleScroll = () => {

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Calendar, Check, X, ArrowRight, Clock, Video, ShieldCheck } from 'lucide-react';
+import { Check, X, ArrowRight, Clock, Video, ShieldCheck } from 'lucide-react';
 import { useBooking } from '../contexts/BookingContext';
 
 const FinalCTA = () => {

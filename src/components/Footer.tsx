@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Linkedin, Mail, Phone, MapPin } from 'lucide-react';
 import { Logo } from './Logo';
 
