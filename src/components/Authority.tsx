@@ -7,10 +7,10 @@ const companies = [
 
 const Authority = () => {
   return (
-    <section className="py-24 bg-slate-50 relative overflow-hidden" id="quem-somos">
+    <section className="py-16 md:py-24 bg-slate-50 relative overflow-hidden" id="quem-somos">
       <div className="container mx-auto relative z-10">
         
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-start">
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-20 items-start">
           
           {/* Left Column: The Narrative */}
           <div className="lg:col-span-5 sticky top-24">

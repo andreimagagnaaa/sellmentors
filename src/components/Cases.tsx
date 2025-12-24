@@ -2,15 +2,15 @@ import { motion } from 'framer-motion';
 import { Quote } from 'lucide-react';
 
 const companies = [
-  { name: "Salesforce", logo: "https://logo.clearbit.com/salesforce.com" },
-  { name: "SAP", logo: "https://logo.clearbit.com/sap.com" },
-  { name: "Arezzo", logo: "https://logo.clearbit.com/arezzo.com.br" },
-  { name: "Gerdau", logo: "https://logo.clearbit.com/gerdau.com.br" },
-  { name: "Tramontina", logo: "https://logo.clearbit.com/tramontina.com.br" },
-  { name: "Vipal", logo: "https://logo.clearbit.com/vipal.com" },
-  { name: "Stara", logo: "https://logo.clearbit.com/stara.com.br" },
-  { name: "RBS", logo: "https://logo.clearbit.com/gruporbs.com.br" },
-  { name: "FCC", logo: "https://logo.clearbit.com/fcc.com.br" }
+  { name: "Salesforce", logo: "https://placehold.co/150x50/f8fafc/64748b?text=Salesforce" },
+  { name: "SAP", logo: "https://placehold.co/150x50/f8fafc/64748b?text=SAP" },
+  { name: "Arezzo", logo: "https://placehold.co/150x50/f8fafc/64748b?text=Arezzo" },
+  { name: "Gerdau", logo: "https://placehold.co/150x50/f8fafc/64748b?text=Gerdau" },
+  { name: "Tramontina", logo: "https://placehold.co/150x50/f8fafc/64748b?text=Tramontina" },
+  { name: "Vipal", logo: "https://placehold.co/150x50/f8fafc/64748b?text=Vipal" },
+  { name: "Stara", logo: "https://placehold.co/150x50/f8fafc/64748b?text=Stara" },
+  { name: "RBS", logo: "https://placehold.co/150x50/f8fafc/64748b?text=RBS" },
+  { name: "FCC", logo: "https://placehold.co/150x50/f8fafc/64748b?text=FCC" }
 ];
 
 const Cases = () => {

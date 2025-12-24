@@ -78,9 +78,10 @@ const Hero = () => {
             </p>
 
             <div className="flex flex-col gap-4">
-              <Button onClick={openBookingModal} className="group h-14 px-8 text-base w-fit shadow-lg shadow-blue-500/20 hover:shadow-blue-500/30 transition-all">
-                AGENDAR SESSÃO ESTRATÉGICA GRATUITA (30 minutos)
-                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              <Button onClick={openBookingModal} className="group h-auto py-4 md:h-14 md:py-0 px-6 md:px-8 text-sm md:text-base w-fit shadow-lg shadow-blue-500/20 hover:shadow-blue-500/30 transition-all whitespace-normal text-center">
+                <span className="md:hidden">AGENDAR SESSÃO ESTRATÉGICA GRATUITA</span>
+                <span className="hidden md:inline">AGENDAR SESSÃO ESTRATÉGICA GRATUITA (30 minutos)</span>
+                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform inline-block shrink-0" />
               </Button>
               <p className="text-xs text-slate-500 font-medium tracking-wide pl-1">
                 Primeira sessão gratuita • Diagnóstico objetivo do seu cenário • Sem compromisso
