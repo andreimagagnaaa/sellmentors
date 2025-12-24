@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&amp;display=swap');
+    .text { font-family: 'Playfair Display', serif; font-weight: bold; fill: #2563eb; }
+  </style>
+  <text x="35" y="75" font-size="80" text-anchor="middle" class="text">S</text>
+  <text x="65" y="75" font-size="80" text-anchor="middle" class="text">M</text>
+</svg>

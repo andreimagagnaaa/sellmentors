@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 60">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&amp;family=Plus+Jakarta+Sans:wght@700&amp;display=swap');
+    .serif { font-family: 'Playfair Display', serif; font-weight: bold; fill: #2563eb; }
+    .sans { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: bold; fill: #0f172a; }
+  </style>
+  <g transform="translate(20, 5)">
+      <text x="0" y="40" font-size="45" text-anchor="middle" class="serif">S</text>
+      <text x="25" y="40" font-size="45" text-anchor="middle" class="serif">M</text>
+  </g>
+  <text x="65" y="40" font-size="30" class="sans">SellMentors</text>
+</svg>
