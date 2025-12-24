@@ -13,7 +13,7 @@ const Authority = () => {
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-20 items-start">
           
           {/* Left Column: The Narrative */}
-          <div className="lg:col-span-5 sticky top-24">
+          <div className="lg:col-span-5 lg:sticky lg:top-24">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -62,7 +62,7 @@ const Authority = () => {
 
               <button 
                 onClick={() => document.getElementById('methodology')?.scrollIntoView({ behavior: 'smooth' })}
-                className="mt-10 group flex items-center gap-2 text-primary font-bold hover:text-blue-700 transition-colors"
+                className="mt-8 md:mt-10 group flex items-center justify-center md:justify-start gap-2 text-primary font-bold hover:text-blue-700 transition-colors w-full md:w-auto"
               >
                 Conheça Nossa Metodologia
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
