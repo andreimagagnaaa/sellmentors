@@ -12,6 +12,7 @@ import Footer from './components/Footer';
 import IdentityPage from './components/IdentityPage';
 import { BookingProvider } from './contexts/BookingContext';
 import BookingModal from './components/BookingModal';
+import { Analytics } from "@vercel/analytics/react";
 
 function App() {
   const [path, setPath] = useState(window.location.pathname);
@@ -46,6 +47,7 @@ function App() {
 
         <Footer />
         <BookingModal />
+        <Analytics />
       </div>
     </BookingProvider>
   );
