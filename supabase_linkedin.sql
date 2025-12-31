@@ -1,5 +1,5 @@
 -- Create a table for storing LinkedIn Ads strategy sections
-create table linkedin_sections (
+create table if not exists linkedin_sections (
   key text primary key,
   data jsonb not null
 );
@@ -7,12 +7,17 @@ create table linkedin_sections (
 -- Enable RLS
 alter table linkedin_sections enable row level security;
 
+-- Drop existing policies to avoid errors when recreating them
+drop policy if exists "Enable read access for all users" on linkedin_sections;
+drop policy if exists "Enable update access for all users" on linkedin_sections;
+drop policy if exists "Enable insert access for all users" on linkedin_sections;
+
 -- Create policies to allow public access (since this is an internal tool without auth for now)
 create policy "Enable read access for all users" on linkedin_sections for select using (true);
 create policy "Enable update access for all users" on linkedin_sections for update using (true);
 create policy "Enable insert access for all users" on linkedin_sections for insert with check (true);
 
--- Insert initial data
+-- Insert initial data (Upsert - updates if exists)
 insert into linkedin_sections (key, data) values
 ('overview', '{"objective": "Gerar leads qualificados para sessões estratégicas gratuitas (30 min), focando em gestores e vendedores B2B que enfrentam desafios reais de performance comercial.", "budget": "Mês 1: R$ 1.000 (investimento inicial)\nMês 2: R$ 0 (crédito do LinkedIn)\nMês 3+: R$ 1.000/mês"}'::jsonb),
 ('audience', '{"roles": ["Diretor Comercial", "VP de Vendas", "Head de Vendas", "Gerente de Vendas", "Gerente Comercial", "Chief Revenue Officer (CRO)", "Account Executive", "Sales Executive", "Executivo de Contas", "Vendedor B2B"], "sectors": ["SaaS e Tecnologia", "Serviços B2B", "Indústria", "Consultorias"], "locations": ["São Paulo (capital e região metropolitana)", "Porto Alegre"], "company_size": ["51-200 funcionários", "201-500 funcionários"], "experience": "5+ anos na função"}'::jsonb),
@@ -26,4 +31,5 @@ insert into linkedin_sections (key, data) values
 ('native_forms', '{"forms": [
   {"title": "Mentoria Comercial B2B", "subtitle": "Inscreva-se para uma sessão estratégica gratuita de 30 minutos."},
   {"title": "Diagnóstico de Vendas", "subtitle": "Receba uma análise completa do seu processo comercial."}
-]}'::jsonb);
+]}'::jsonb)
+on conflict (key) do update set data = excluded.data;
