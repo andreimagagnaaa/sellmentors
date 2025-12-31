@@ -2,7 +2,9 @@ import { motion } from 'framer-motion';
 import { Building2, TrendingUp, ArrowRight, Briefcase, Target, ShieldCheck } from 'lucide-react';
 
 const companies = [
-  "Salesforce", "SAP", "RBS / Zero Hora", "Gerdau", "Tramontina"
+  "Lojas Renner", "Cooperativa Sicredi", "WEG", "AGIBANK", "Softplan",
+  "Banrisul", "TRF4", "TJRS", "Procergs", "Procempa",
+  "Ciasc", "Celesc", "SEFAZ-RS", "BRDE"
 ];
 
 const Authority = () => {

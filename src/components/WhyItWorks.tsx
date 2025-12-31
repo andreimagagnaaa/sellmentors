@@ -15,7 +15,7 @@ const reasons = [
   {
     icon: ListChecks,
     title: "Perguntas de Validação",
-    description: "Implementamos processos de discovery que evitam surpresas tardias."
+    description: "Implementamos processos de validação que evitam surpresas tardias."
   },
   {
     icon: Briefcase,

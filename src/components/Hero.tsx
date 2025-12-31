@@ -77,12 +77,35 @@ const Hero = () => {
               Enquanto você cultiva relacionamentos sem direção, nós ensinamos você a estruturar um processo que leva ao fechamento.
             </p>
 
-            <div className="flex flex-col gap-4">
-              <Button onClick={openBookingModal} className="group h-auto py-4 md:h-14 md:py-0 px-6 md:px-8 text-sm md:text-base w-fit shadow-lg shadow-blue-500/20 hover:shadow-blue-500/30 transition-all whitespace-normal text-center">
-                <span className="md:hidden">AGENDAR SESSÃO ESTRATÉGICA GRATUITA</span>
-                <span className="hidden md:inline">AGENDAR SESSÃO ESTRATÉGICA GRATUITA (30 minutos)</span>
-                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform inline-block shrink-0" />
-              </Button>
+            <div className="flex flex-col gap-6">
+              <div className="grid sm:grid-cols-2 gap-4 max-w-xl">
+                <Button 
+                  variant="outline" 
+                  onClick={openBookingModal} 
+                  className="h-auto py-4 px-5 flex flex-col items-start gap-2 text-left normal-case tracking-normal group hover:border-primary/60 bg-white/50 backdrop-blur-sm hover:bg-white transition-all"
+                >
+                  <span className="font-bold text-primary text-base flex items-center gap-2">
+                    Para Você <ArrowRight className="w-4 h-4 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all" />
+                  </span>
+                  <span className="text-xs text-slate-600 font-medium leading-relaxed">
+                    Busco treinamento e mentoria individual para acelerar meus resultados.
+                  </span>
+                </Button>
+
+                <Button 
+                  variant="outline" 
+                  onClick={openBookingModal} 
+                  className="h-auto py-4 px-5 flex flex-col items-start gap-2 text-left normal-case tracking-normal group hover:border-primary/60 bg-white/50 backdrop-blur-sm hover:bg-white transition-all"
+                >
+                  <span className="font-bold text-primary text-base flex items-center gap-2">
+                    Para Empresas <ArrowRight className="w-4 h-4 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all" />
+                  </span>
+                  <span className="text-xs text-slate-600 font-medium leading-relaxed">
+                    Busco gestão comercial e estruturação de processos para meu time.
+                  </span>
+                </Button>
+              </div>
+
               <p className="text-xs text-slate-500 font-medium tracking-wide pl-1">
                 Primeira sessão gratuita • Diagnóstico objetivo do seu cenário • Sem compromisso
               </p>

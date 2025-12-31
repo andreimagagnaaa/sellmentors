@@ -1,18 +1,62 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X } from 'lucide-react';
+import { X, Loader2, CheckCircle } from 'lucide-react';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { useBooking } from '../contexts/BookingContext';
+import { supabase } from '../lib/supabase';
 
 const BookingModal = () => {
   const { isBookingModalOpen, closeBookingModal } = useBooking();
+  const [isLoading, setIsLoading] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [formData, setFormData] = useState({
+    name: '',
+    company: '',
+    email: '',
+    phone: ''
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData(prev => ({
+      ...prev,
+      [e.target.id]: e.target.value
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log("Form submitted");
-    closeBookingModal();
+    setIsLoading(true);
+    setError(null);
+
+    try {
+      const { error: supabaseError } = await supabase
+        .from('leads')
+        .insert([
+          {
+            name: formData.name,
+            company: formData.company,
+            email: formData.email,
+            phone: formData.phone
+          }
+        ]);
+
+      if (supabaseError) throw supabaseError;
+
+      setIsSuccess(true);
+      setTimeout(() => {
+        closeBookingModal();
+        setIsSuccess(false);
+        setFormData({ name: '', company: '', email: '', phone: '' });
+      }, 3000);
+    } catch (err) {
+      console.error('Error submitting form:', err);
+      setError('Ocorreu um erro ao enviar. Tente novamente.');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -40,70 +84,109 @@ const BookingModal = () => {
               <X className="w-6 h-6" />
             </button>
 
-            <div className="mb-8">
-              <h2 className="text-2xl font-serif font-bold text-slate-900 mb-2">
-                Agendar Sessão Estratégica
-              </h2>
-              <p className="text-slate-600">
-                Preencha seus dados abaixo para solicitarmos o agendamento.
-              </p>
-            </div>
-
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="space-y-2">
-                <label htmlFor="name" className="text-sm font-medium text-slate-700">
-                  Nome Completo
-                </label>
-                <Input
-                  id="name"
-                  placeholder="Seu nome"
-                  required
-                  className="w-full"
-                />
+            {isSuccess ? (
+              <div className="flex flex-col items-center justify-center py-12 text-center">
+                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4">
+                  <CheckCircle className="w-8 h-8 text-green-600" />
+                </div>
+                <h3 className="text-2xl font-serif font-bold text-slate-900 mb-2">
+                  Solicitação Recebida!
+                </h3>
+                <p className="text-slate-600">
+                  Entraremos em contato em breve para agendar sua sessão estratégica.
+                </p>
               </div>
+            ) : (
+              <>
+                <div className="mb-8">
+                  <h2 className="text-2xl font-serif font-bold text-slate-900 mb-2">
+                    Agendar Sessão Estratégica
+                  </h2>
+                  <p className="text-slate-600">
+                    Preencha seus dados abaixo para solicitarmos o agendamento.
+                  </p>
+                </div>
 
-              <div className="space-y-2">
-                <label htmlFor="company" className="text-sm font-medium text-slate-700">
-                  Empresa
-                </label>
-                <Input
-                  id="company"
-                  placeholder="Nome da sua empresa"
-                  required
-                  className="w-full"
-                />
-              </div>
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <div className="space-y-2">
+                    <label htmlFor="name" className="text-sm font-medium text-slate-700">
+                      Nome Completo
+                    </label>
+                    <Input
+                      id="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      placeholder="Seu nome"
+                      required
+                      className="w-full"
+                      disabled={isLoading}
+                    />
+                  </div>
 
-              <div className="space-y-2">
-                <label htmlFor="email" className="text-sm font-medium text-slate-700">
-                  E-mail Corporativo
-                </label>
-                <Input
-                  id="email"
-                  type="email"
-                  placeholder="seu@email.com"
-                  required
-                  className="w-full"
-                />
-              </div>
+                  <div className="space-y-2">
+                    <label htmlFor="company" className="text-sm font-medium text-slate-700">
+                      Empresa
+                    </label>
+                    <Input
+                      id="company"
+                      value={formData.company}
+                      onChange={handleChange}
+                      placeholder="Nome da sua empresa"
+                      required
+                      className="w-full"
+                      disabled={isLoading}
+                    />
+                  </div>
 
-              <div className="space-y-2">
-                <label htmlFor="phone" className="text-sm font-medium text-slate-700">
-                  Telefone / WhatsApp
-                </label>
-                <Input
-                  id="phone"
-                  type="tel"
-                  placeholder="(11) 99999-9999"
-                  required
-                  className="w-full"
-                />
-              </div>
+                  <div className="space-y-2">
+                    <label htmlFor="email" className="text-sm font-medium text-slate-700">
+                      E-mail Corporativo
+                    </label>
+                    <Input
+                      id="email"
+                      type="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      placeholder="seu@email.com"
+                      required
+                      className="w-full"
+                      disabled={isLoading}
+                    />
+                  </div>
 
-              <Button type="submit" className="w-full h-12 text-base mt-6">
-                Solicitar Agendamento
-              </Button>
-            </form>
+                  <div className="space-y-2">
+                    <label htmlFor="phone" className="text-sm font-medium text-slate-700">
+                      Telefone / WhatsApp
+                    </label>
+                    <Input
+                      id="phone"
+                      type="tel"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      placeholder="(11) 99999-9999"
+                      required
+                      className="w-full"
+                      disabled={isLoading}
+                    />
+                  </div>
+
+                  {error && (
+                    <p className="text-sm text-red-500 text-center">{error}</p>
+                  )}
+
+                  <Button type="submit" className="w-full h-12 text-base mt-6" disabled={isLoading}>
+                    {isLoading ? (
+                      <>
+                        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                        Enviando...
+                      </>
+                    ) : (
+                      'Solicitar Agendamento'
+                    )}
+                  </Button>
+                </form>
+              </>
+            )}
           </motion.div>
         </>
       )}

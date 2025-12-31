@@ -21,8 +21,8 @@ const steps = [
     icon: Users2,
     title: "Consultoria de Times",
     subtitle: "Para Gestores",
-    description: "Transformamos talento individual em processo replicável. Estruturação de playbook e rituais para previsibilidade de receita.",
-    details: ["Playbook de Vendas", "Framework de Discovery", "Gestão de Pipeline"]
+    description: "Transformamos talento individual em processo replicável. Estruturação de processos e rituais para previsibilidade de receita.",
+    details: ["Processo de Vendas", "Rituais de Gestão", "Gestão de Pipeline"]
   }
 ];
 
