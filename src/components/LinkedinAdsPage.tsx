@@ -82,7 +82,7 @@ const LinkedinAdsPage = () => {
   };
 
   const handleArrayChange = (
-    section: 'audience', 
+    _section: 'audience', 
     field: keyof AudienceData, 
     value: string
   ) => {
@@ -221,7 +221,7 @@ const LinkedinAdsPage = () => {
             <h2 className="text-lg font-bold text-slate-900 flex items-center gap-2">
               💬 Message Ads
             </h2>
-            <Button onClick={addAd} variant="outline" size="sm">
+            <Button onClick={addAd} variant="outline" className="h-8 px-3 text-xs">
               <Plus className="w-4 h-4 mr-2" /> Adicionar Copy
             </Button>
           </div>
