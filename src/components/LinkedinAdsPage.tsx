@@ -299,7 +299,7 @@ const LinkedinAdsPage = () => {
                       value={form.title}
                       onChange={(e) => updateForm(index, 'title', e.target.value)}
                       className="bg-white"
-                      placeholder="Ex: Mentoria Comercial B2B"
+                      placeholder="Ex: Sessão Estratégica de Vendas B2B"
                     />
                   </div>
                   <div>
@@ -308,7 +308,7 @@ const LinkedinAdsPage = () => {
                       value={form.subtitle}
                       onChange={(e) => updateForm(index, 'subtitle', e.target.value)}
                       className="bg-white"
-                      placeholder="Ex: Inscreva-se para uma sessão estratégica gratuita."
+                      placeholder="Ex: Agende seu diagnóstico gratuito (30 min)."
                     />
                   </div>
                 </div>

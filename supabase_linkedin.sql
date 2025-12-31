@@ -29,7 +29,6 @@ insert into linkedin_sections (key, data) values
   {"title": "Copy - 05", "content": "[Nome],\n\nPergunta rápida: suas vendas dependem de sorte ou de método?\n\nSe você não sabe responder com certeza... provavelmente é sorte.\n\nE sorte não escala. Não se replica. Não se ensina.\n\nMétodo sim.\n\nEm 35 anos estruturando vendas B2B, transformei \"arte\" em ciência:\n\n→ Qualificação que separa oportunidade de perda de tempo\n→ Perguntas que revelam a verdade (não o que você quer ouvir)\n→ Follow-up que avança, não que amola\n\nQuer ver como? 30 minutos. Gratuito.\n\n👉 Clique em Saiba Mais"}
  ]}'::jsonb),
 ('native_forms', '{"forms": [
-  {"title": "Mentoria Comercial B2B", "subtitle": "Inscreva-se para uma sessão estratégica gratuita de 30 minutos."},
-  {"title": "Diagnóstico de Vendas", "subtitle": "Receba uma análise completa do seu processo comercial."}
+  {"title": "Sessão Estratégica de Vendas B2B", "subtitle": "Agende seu diagnóstico gratuito (30 min). Descubra como transformar seu processo comercial em uma máquina de vendas previsível."}
 ]}'::jsonb)
 on conflict (key) do update set data = excluded.data;
