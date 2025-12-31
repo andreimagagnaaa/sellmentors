@@ -26,6 +26,15 @@ interface MessageAdsData {
   ads: MessageAd[];
 }
 
+interface NativeForm {
+  title: string;
+  subtitle: string;
+}
+
+interface NativeFormsData {
+  forms: NativeForm[];
+}
+
 const LinkedinAdsPage = () => {
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
@@ -35,6 +44,7 @@ const LinkedinAdsPage = () => {
     roles: [], sectors: [], locations: [], company_size: [], experience: '' 
   });
   const [messageAds, setMessageAds] = useState<MessageAdsData>({ ads: [] });
+  const [nativeForms, setNativeForms] = useState<NativeFormsData>({ forms: [] });
 
   useEffect(() => {
     fetchData();
@@ -55,6 +65,7 @@ const LinkedinAdsPage = () => {
         if (row.key === 'overview') setOverview(row.data);
         if (row.key === 'audience') setAudience(row.data);
         if (row.key === 'message_ads') setMessageAds(row.data);
+        if (row.key === 'native_forms') setNativeForms(row.data);
       });
     }
     setLoading(false);
@@ -66,7 +77,8 @@ const LinkedinAdsPage = () => {
     const updates = [
       { key: 'overview', data: overview },
       { key: 'audience', data: audience },
-      { key: 'message_ads', data: messageAds }
+      { key: 'message_ads', data: messageAds },
+      { key: 'native_forms', data: nativeForms }
     ];
 
     for (const update of updates) {
@@ -112,6 +124,26 @@ const LinkedinAdsPage = () => {
       const newAds = [...prev.ads];
       newAds[index] = { ...newAds[index], [field]: value };
       return { ads: newAds };
+    });
+  };
+
+  const addForm = () => {
+    setNativeForms(prev => ({
+      forms: [...prev.forms, { title: '', subtitle: '' }]
+    }));
+  };
+
+  const removeForm = (index: number) => {
+    setNativeForms(prev => ({
+      forms: prev.forms.filter((_, i) => i !== index)
+    }));
+  };
+
+  const updateForm = (index: number, field: keyof NativeForm, value: string) => {
+    setNativeForms(prev => {
+      const newForms = [...prev.forms];
+      newForms[index] = { ...newForms[index], [field]: value };
+      return { forms: newForms };
     });
   };
 
@@ -237,7 +269,53 @@ const LinkedinAdsPage = () => {
                 </button>
                 
                 <div className="space-y-4">
+                  
+
+        {/* Native Forms Section */}
+        <section className="bg-white rounded-xl shadow-sm border p-6">
+          <div className="flex items-center justify-between mb-6">
+            <h2 className="text-lg font-bold text-slate-900 flex items-center gap-2">
+              📝 Native Forms (Lead Gen)
+            </h2>
+            <Button onClick={addForm} variant="outline" className="h-8 px-3 text-xs">
+              <Plus className="w-4 h-4 mr-2" /> Adicionar Formulário
+            </Button>
+          </div>
+          
+          <div className="space-y-6">
+            {nativeForms.forms.map((form, index) => (
+              <div key={index} className="border rounded-lg p-4 bg-slate-50/50 relative group">
+                <button 
+                  onClick={() => removeForm(index)}
+                  className="absolute top-4 right-4 text-slate-400 hover:text-red-500 opacity-0 group-hover:opacity-100 transition-opacity"
+                >
+                  <Trash2 className="w-4 h-4" />
+                </button>
+                
+                <div className="space-y-4">
                   <div>
+                    <label className="block text-xs font-medium text-slate-500 mb-1 uppercase tracking-wider">Título do Formulário (Headline)</label>
+                    <Input
+                      value={form.title}
+                      onChange={(e) => updateForm(index, 'title', e.target.value)}
+                      className="bg-white"
+                      placeholder="Ex: Mentoria Comercial B2B"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-medium text-slate-500 mb-1 uppercase tracking-wider">Subtítulo / Detalhes (Offer Details)</label>
+                    <Input
+                      value={form.subtitle}
+                      onChange={(e) => updateForm(index, 'subtitle', e.target.value)}
+                      className="bg-white"
+                      placeholder="Ex: Inscreva-se para uma sessão estratégica gratuita."
+                    />
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section><div>
                     <label className="block text-xs font-medium text-slate-500 mb-1 uppercase tracking-wider">Título / Identificador</label>
                     <Input
                       value={ad.title}
