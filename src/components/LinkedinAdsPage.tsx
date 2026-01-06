@@ -147,6 +147,25 @@ const LinkedinAdsPage = () => {
     });
   };
 
+  const renderMessagePreview = (content: string) => {
+    if (!content) return null;
+    return content.split('\n').map((line, i) => (
+      <div key={i} className="min-h-[1.2em]">
+        {renderLineWithBold(line)}
+      </div>
+    ));
+  };
+
+  const renderLineWithBold = (text: string) => {
+    const parts = text.split(/(\*\*.*?\*\*)/g);
+    return parts.map((part, index) => {
+      if (part.startsWith('**') && part.endsWith('**')) {
+        return <strong key={index} className="font-bold text-slate-900">{part.slice(2, -2)}</strong>;
+      }
+      return <span key={index}>{part}</span>;
+    });
+  };
+
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-slate-50">
@@ -326,10 +345,16 @@ const LinkedinAdsPage = () => {
                   <div>
                     <label className="block text-xs font-medium text-slate-500 mb-1 uppercase tracking-wider">Conteúdo da Mensagem</label>
                     <textarea
-                      className="w-full min-h-[200px] p-3 rounded-md border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 bg-white font-mono text-sm"
+                      className="w-full min-h-[200px] p-3 rounded-md border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 bg-white text-sm"
                       value={ad.content}
                       onChange={(e) => updateAd(index, 'content', e.target.value)}
                     />
+                    <div className="mt-4 p-4 bg-slate-50 border rounded-md">
+                      <p className="text-xs font-bold text-slate-400 mb-2 uppercase tracking-wider">Pré-visualização (Negrito Aplicado)</p>
+                      <div className="text-slate-700 text-sm whitespace-pre-wrap leading-relaxed">
+                        {renderMessagePreview(ad.content)}
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
