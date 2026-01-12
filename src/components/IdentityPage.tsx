@@ -83,6 +83,33 @@ const IdentityPage = () => {
               <LogoCard title="Logo Vertical Light" src="/identidade/sm-logo-vertical-light.svg" dark />
             </div>
           </section>
+
+          <section>
+            <h2 className="text-2xl font-bold mb-6 text-slate-800 border-b pb-2">Redes Sociais</h2>
+            <div className="grid md:grid-cols-1 gap-8">
+              <div className="border rounded-lg p-6 flex flex-col items-center bg-slate-50">
+                <div className="w-full flex items-center justify-center mb-4 bg-slate-200 rounded overflow-hidden">
+                  <img src="/identidade/linkedin-cover-horizontal-right.svg" alt="Capa LinkedIn" className="w-full h-auto" />
+                </div>
+                <h3 className="font-bold mb-4 text-slate-900">Capa LinkedIn (Logo à Direita)</h3>
+                <div className="flex gap-2">
+                  <a 
+                    href="/identidade/linkedin-cover-horizontal-right.svg" 
+                    download 
+                    className="px-3 py-2 text-sm bg-primary text-white rounded hover:bg-blue-700 transition"
+                  >
+                    SVG
+                  </a>
+                  <button 
+                    onClick={() => downloadPng('/identidade/linkedin-cover-horizontal-right.svg', 'linkedin-cover.png')}
+                    className="px-3 py-2 text-sm border border-slate-300 text-slate-700 rounded hover:bg-slate-100 transition"
+                  >
+                    PNG
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
         </div>
         
         <div className="mt-12 text-center">

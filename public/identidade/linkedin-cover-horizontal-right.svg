@@ -1,0 +1,46 @@
+<svg width="1584" height="396" viewBox="0 0 1584 396" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1584" y2="396" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1e3a8a" /> <!-- slate-900 like / blue-800 -->
+      <stop offset="100%" stop-color="#2563eb" /> <!-- primary -->
+    </linearGradient>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&amp;family=Plus+Jakarta+Sans:wght@700&amp;display=swap');
+      .serif { font-family: 'Playfair Display', serif; font-weight: 700; }
+      .sans { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1584" height="396" fill="url(#bg)" />
+
+  <!-- Noise Overlay (optional, simulating the css noise) -->
+  <rect width="1584" height="396" fill="#000" opacity="0.05" />
+
+  <!-- Logo Group - Aligned to the Right -->
+  <!-- Centered vertically (198), placed around x=1100 to be safe from profile pic on left -->
+  <g transform="translate(1000, 198)">
+    
+    <!-- Icon Container -->
+    <!-- Scale up slightly for the banner context -->
+    <g transform="scale(3)">
+      <!-- S -->
+      <!-- Translate logic from CSS: Left 50% - 65% width. 
+           Let's assume a base width of 60 units for the icon box.
+           Center 0. S is at -10. M is at +5.
+      -->
+      <text x="-15" y="10" fill="white" font-size="40" class="serif" text-anchor="middle">S</text>
+      <!-- M -->
+      <!-- z-index 10 in css implies M is on top -->
+      <text x="5" y="10" fill="white" font-size="40" class="serif" text-anchor="middle">M</text>
+    </g>
+
+    <!-- Text "SellMentors" -->
+    <!-- Offset to the right of the icon. 
+         Icon is roughly 100px wide at scale 3.
+         Let's put text starting at x=80
+    -->
+    <text x="80" y="25" fill="white" font-size="80" class="sans" letter-spacing="-1">SellMentors</text>
+
+  </g>
+</svg>
