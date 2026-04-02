@@ -5,21 +5,15 @@ A ciência de fechar grandes negócios. Elimine o achismo e transforme seus proc
 
 ## Sobre nós (Descrição completa)
 
-A SellMentors é uma consultoria especializada em vendas complexas e estruturação comercial. Nossa missão é transformar a maneira como vendedores e gestores conduzem seus negócios: trocando a intuição pelo método e a esperança pela previsibilidade.
+Transformamos intuição em método e esperança em previsibilidade. A SellMentors é especialista em vendas complexas, atuando com rigor técnico para fechar grandes negócios.
 
-Entendemos que em vendas complexas, "cultivar relacionamento" sem direção não gera receita. Por isso, focamos na ciência por trás do fechamento.
+🚀 **Para Vendedores:** Mentoria prática com *deals* reais. Eliminamos respostas vagas e focamos na ação.
 
-**Como ajudamos:**
+🏢 **Para Empresas:** Estruturação de processos e rituais de gestão. Convertemos talento individual em receita previsível.
 
-🚀 **Para Vendedores (Mentoria Individual):**
-Acompanhamento prático para acelerar seus resultados. Trazemos seus *deals* reais para a mesa, eliminamos respostas vagas e definimos ações concretas para o fechamento.
+"O cliente gostou" não é métrica. Focamos na ciência do fechamento.
 
-🏢 **Para Empresas (Consultoria e Gestão):**
-Transformamos talento individual em processo replicável. Atuamos na estruturação de processos comerciais, implementação de rituais de gestão e criação de previsibilidade de receita.
-
-Acreditamos que "o cliente gostou" não é métrica. Se você busca rigor técnico, estratégia clara e execução orientada a dados, a SellMentors é o seu parceiro ideal.
-
-🔗 **Agende uma sessão estratégica gratuita em nosso site.**
+🔗 **Agende sua sessão estratégica no site.**
 
 ---
 

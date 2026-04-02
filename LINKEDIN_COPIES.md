@@ -157,3 +157,97 @@ Eu ensino como identificar isso antes de gastar horas montando PPT.
 **30 minutos para mudar seu jogo.**
 
 👉 Clique em Saiba Mais
+
+---
+
+## 📝 Copy 08
+
+%FIRSTNAME%,
+
+"O cliente adorou a apresentação."
+"Ele vai levar pro time."
+"Disse que me retorna semana que vem."
+
+Já ouviu (ou falou) isso?
+
+Pois é. Eu também. Dezenas de vezes.
+
+E perdi centenas de deals acreditando nisso.
+
+**Porque "gostar" não é métrica. "Levar pro time" não é compromisso.**
+
+Aprendi (do jeito difícil) quais perguntas fazer para saber se o interesse é real ou só educação.
+
+**Posso te ensinar. 30 minutos. Gratuito.**
+
+👉 Clique em Saiba Mais
+
+---
+
+## 📝 Copy 09
+
+%FIRSTNAME%,
+
+Cliente não responde há 15 dias.
+
+**Você não sabe se insiste ou se desiste.** Tem medo de parecer desesperado.
+
+Aí fica naquele limbo: não avança, não descarta.
+
+Esse é um dos problemas mais comuns em vendas. E tem solução estruturada.
+
+**Vamos olhar isso juntos? 30 minutos. Gratuito. Sem compromisso.**
+
+👉 Clique em Saiba Mais
+
+---
+
+## 📝 Copy 10
+
+%FIRSTNAME%,
+
+"O mercado está difícil."
+"Os clientes não têm budget."
+"A concorrência está jogando o preço lá embaixo."
+
+Ouço isso toda semana.
+
+Sabe o que descobri em **20 anos**?
+
+As empresas que continuam vendendo bem não estão em outro mercado.
+**Elas só pararam de achar e começaram a saber.**
+
+→ Sabem exatamente onde estão no processo
+→ Sabem qual pergunta fazer em cada etapa
+→ Sabem quando desqualificar (sim, é um superpoder)
+
+Quer saber a diferença entre "achar" e "saber"?
+
+**Te mostro em 30 minutos.**
+
+👉 Clique em Saiba Mais
+
+---
+
+## 📝 Copy 11
+
+%FIRSTNAME%,
+
+Pergunta rápida: **suas vendas dependem de sorte ou de método?**
+
+Se você não sabe responder com certeza... provavelmente é sorte.
+
+**E sorte não escala. Não se replica. Não se ensina.**
+
+Método sim.
+
+Em **20 anos** estruturando vendas B2B, transformei "arte" em ciência:
+
+→ Qualificação que separa oportunidade de perda de tempo
+→ Perguntas que revelam a verdade (não o que você quer ouvir)
+→ Follow-up que avança, não que amola
+
+Quer ver como? **30 minutos. Gratuito.**
+
+👉 Clique em Saiba Mais
+
