@@ -33,11 +33,11 @@ const Footer = () => {
               <h4 className="text-white font-serif font-bold mb-6">Contato</h4>
               <ul className="space-y-4">
                 <li>
-                  <a href="mailto:contato@sellmentors.com.br" className="group flex items-center gap-3 hover:text-white transition-colors">
+                  <a href="mailto:fernando@sellmentors.com.br" className="group flex items-center gap-3 hover:text-white transition-colors">
                     <div className="w-8 h-8 rounded-lg bg-slate-900 flex items-center justify-center group-hover:bg-slate-800 transition-colors">
                       <Mail className="w-4 h-4" />
                     </div>
-                    <span className="text-sm">contato@sellmentors.com.br</span>
+                    <span className="text-sm">fernando@sellmentors.com.br</span>
                   </a>
                 </li>
                 <li>

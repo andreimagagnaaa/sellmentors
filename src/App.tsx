@@ -11,6 +11,7 @@ import FinalCTA from './components/FinalCTA';
 import Footer from './components/Footer';
 import IdentityPage from './components/IdentityPage';
 import LinkedinAdsPage from './components/LinkedinAdsPage';
+import PropostaAdentro from './components/PropostaAdentro';
 import { BookingProvider } from './contexts/BookingContext';
 import BookingModal from './components/BookingModal';
 import { Analytics } from "@vercel/analytics/react";
@@ -30,6 +31,10 @@ function App() {
 
   if (path === '/linkedin-ads' || path === '/linkedin-ads/') {
     return <LinkedinAdsPage />;
+  }
+
+  if (path === '/proposta-adentro' || path === '/proposta-adentro/') {
+    return <PropostaAdentro />;
   }
 
   return (
